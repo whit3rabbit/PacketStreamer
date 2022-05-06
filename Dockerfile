@@ -2,6 +2,8 @@ FROM golang:latest as builder
 
 RUN apt-get update -y \
     && apt-get install -y \
+    flex \
+    bison \
     git \
     make
 RUN git clone --branch libpcap-1.10.1 --depth 1 https://github.com/the-tcpdump-group/libpcap.git /libpcap \
